@@ -18,7 +18,6 @@ let appData = {
     savings: true
 };
 
-let optionalExpenses = {};
 
 function chooseExpenses() {
     for (let i = 0; i < 2; i++) {
@@ -43,7 +42,6 @@ function detectDayBudget(){
 detectDayBudget();
 
 function detectLevel() {
-    appData.moneyPerDay = (appData.budget/30).toFixed(); 
     if (appData.moneyPerDay <= 10) {
         console.log("Минимальный уровень достатка");
     } else if (appData.moneyPerDay > 10 && (appData.moneyPerDay < 20) ) {
@@ -69,9 +67,9 @@ checkSavings();
 function chooseOptExpenses() {
  for (let i = 0; i < 3; i++) {
      let optionalExpense = prompt('Статья необязательных расходов?', '');
-     optionalExpenses[i+1] = optionalExpense;
+     appData.optionalExpenses[i+1] = optionalExpense;
  }
- console.log(optionalExpenses);
+ console.log(appData.optionalExpenses);
 }
 chooseOptExpenses();
 
